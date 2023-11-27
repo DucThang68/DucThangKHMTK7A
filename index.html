@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatiable" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Giỏ hàng</title>
+        <link rel="stylesheet" href="stylee.css">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    </head>
+
+    <body>
+        
+        <main class="container">
+            <h1 class="heading">
+                <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng
+            </h1>
+
+            <div class="item-flex">
+                <section class="checkout">
+                    <h2 class="section-heading">Thanh toán</h2>
+                    <div class="payment-form">
+                        <div class="payment-method">
+                            <button class="method selected">
+                                <i class="fa-regular fa-credit-card"></i> 
+                                <span>Credit card</span>
+                                <i id="checkmart" class="fa-solid fa-circle-check"></i>
+                            </button>
+
+                            <button class="method selected">
+                                <i class="fa-brands fa-paypal"></i>
+                                <span>PayPal</span>
+                                <i id="checkmart" class="fa-regular fa-circle-check"></i>
+                            </button>
+                        </div>
+
+                        <form action="#">
+                            <div class="cardholder-name">
+                                <label for="" class="label-default">Họ tên</label>
+                                <input type="text" name="cardholder-name" id="cardholder-name" class="input-default">
+                            </div>
+
+                            <div class="card-number">
+                                <label for="" class="label-default">Số điện thoại</label>
+                                <input type="number" name="card-number" id="card-number" class="input-default">
+                            </div>
+
+                            <div class="input-flex">
+                                <div class="expire-date">
+                                    <label for="expire-date" class="label-default">Ngày/Tháng</label>
+
+                                    <div class="input-flex">
+                                        <input type="number" name="day" id="expire-date" placeholder="30" min="1" max="31" class="input-default">
+
+                                        <input type="number" name="month" id="expire-date" placeholder="12" min="1" max="12" class="input-default">
+                                    </div>
+                                </div>
+
+                                <div class="cvv">
+                                    <label for="cvv" class="label-default">Mã CVV</label>
+                                    <input type="number" name="cvv" id="cvv" class="input-default">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <button class="btn btn-primary">
+                        <b>Pay</b><span id="payAmount">0VND</span>
+                    </button>
+                </section>
+
+                <section class="cart">
+                    <div class="cart-item-box">
+                        <h2 class="section-heading">Đơn hàng</h2>
+
+                        <div class="product-cart">
+                            <div class="card">
+                                <div class="img-box">
+                                    <img src="img/h1.webp" alt="" width="80px" class="product-img" >
+                                </div>
+
+                            <div class="detail">
+                                    <h4 class="product-name">Mô hình đồ chơi - Nhân vật Yuji Itadori - Chú thuật hồi chiến - No Box</h4>
+                                
+                                <div class="wrapper">
+                                    <div class="product-qty">
+                                        <button id="decrement">
+                                            <i class="fa-solid fa-minus"></i>
+                                        </button>
+                                        <span id="quantity">1</span>
+                                        <button id="increment">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="price">
+                                        <span id="price">28.000đ</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button id="product-close-btn">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            </div>
+                        </div>
+
+                        <div class="product-cart">
+                            <div class="card">
+                                <div class="img-box">
+                                    <img src="img/naruto.jpg" alt="" width="80px" class="product-img" >
+                                </div>
+
+                            <div class="detail">
+                                    <h4 class="product-name">Mô Hình Naruto lắc đầu cười siêu kute - Cao 13,5cm - ngang 9cm - dọc 7cm - nặng 200gram + có box</h4>
+                                
+                                <div class="wrapper">
+                                    <div class="product-qty">
+                                        <button id="decrement">
+                                            <i class="fa-solid fa-minus"></i>
+                                        </button>
+                                        <span id="quantity">1</span>
+                                        <button id="increment">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="price">
+                                        <span id="price">59.000đ</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button id="product-close-btn">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wrapper">
+                        <div class="discout-token">
+                            <label for="token" class="label-default">Mã khuyến mại</label>
+                            <div class="wrapper-flex">
+                                <input type="text" name="discout-token" id="discout-token" class="input-default">
+                                <button class="btn btn-outline">Apply</button>
+                            </div>
+                        </div>
+                        <div class="amount">
+                            <div class="subtotal">
+                                <span>Tiền hàng</span><span id="subtotal">87.000đ</span>
+                            </div>
+                            <div class="tax">
+                                <span>VAT</span><span id="tax">4.000đ</span>
+                            </div>
+                            <div class="shipping">
+                                <span>Vận chuyển</span><span id="shipping">0đ</span>
+                            </div>
+                            <div class="total">
+                                <span>Tổng</span><span id="total">91.000đ</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+
+
+        <script src="script.js"></script>
+        
+    </body>
+</html>

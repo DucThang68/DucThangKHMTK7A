@@ -1,0 +1,644 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,700&display=swap");
+
+:root{
+    --green: #27ae60;
+    --black: #192a56;
+    --light-color: #666;
+    --box-shadow: 0.5rem 1.5rem rgba(0,0,0,.1) ;
+    
+}
+
+
+*{
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;    
+}
+
+header{
+    position: fixed;
+    z-index: 2;
+    top: 0; left: 0; right: 0;
+    background: #fff;
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center ;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+}
+
+header .nvabar a{
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    color:var(--light-color);
+}
+
+header .nvabar a.active,
+header .nvabar a:hover{
+    color: #fff;
+    background: var(--green);
+}
+
+header .icons i,
+header .icons a{
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    text-align: center;
+    font-size: 1.7rem;
+    color: var(--black);
+    border-radius: 50% ;
+    background: #eee;
+}
+
+header .icons i:hover,
+header .icons a:hover{
+    color: #fff;
+    background: var(--green);
+    transform: rotate(360deg);
+}
+
+header .btn-popup{
+    background: #fff;
+}
+
+header .icons menu{
+    display: none;
+}
+
+#search-form{
+    position: fixed;
+    top: -110%; left: 0;
+    height: 50%; width: 100%;
+    z-index: 1004;
+    background: rgba(0,0,0,.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+#search-form.active{
+    top: 0;
+}
+
+
+#search-form #search-box{
+    width: 30rem;
+    border-bottom: .1rem solid #fff;
+    padding: 1rem 0;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: none;
+    background: none;
+}
+
+#search-form #search-box::placeholder{
+    color: #eee;
+}
+
+#search-form #search-box::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+}
+
+#search-form label{
+    color: #fff;
+    cursor: pointer;
+    font-size: 3rem;
+}
+
+#search-form label:hover{
+    color: var(--green);
+}
+
+#search-form #close{
+    position: absolute;
+    color: #fff;
+    cursor: pointer;
+    top: 2rem; right: 3rem;
+    font-size: 5rem;
+}
+
+
+
+
+
+
+
+
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    header{
+        padding: 1rem 2rem;
+    }
+    section{
+        padding: 1rem 2rem;
+    }
+}
+
+@media (max-width:768px){
+    header .icons menu{
+        display: inline-block;
+    }
+    header .nvabar{
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: #fff;
+        border-top: .1rem solid rgba(0,0,0,.2);
+        border-bottom: .1rem solid rgba(0,0,0,.2);
+        padding: 1rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .nvabar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .nvabar a{
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem;
+        font-size: 2rem;  
+        background: #eee;
+    }
+}
+
+
+#search-form #search-box{
+    width: 90%;
+    margin: 0 1rem;
+}
+
+@media (max-width:991px){
+    html{
+        font-size: 50%;
+    }
+    
+
+}
+
+section{
+    padding: 8rem 2%;
+}
+
+section :nth-child(even){
+    background:fixed ;
+}
+
+.main .spham .slide .content .btn{
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--black);
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+}
+.main .spham .slide .content .btn:hover{
+    background: var(--green);
+    letter-spacing: .1rem;
+}
+.main .spham .slide{
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 8rem;
+
+}
+.main .spham .slide .content{
+    flex:1 1 45rem;
+}
+.main .spham .slide .anh{
+    
+    flex:0 0 45rem ;
+}
+.main .spham .slide .anh .image{
+    width: 100%;
+}
+
+.main .spham .slide .content span{
+    color: var(--green);
+    font-size: 2.5rem;
+}
+.main .spham .slide .content h3{
+    color: var(--black);
+    font-size: 6rem;
+}
+.main .spham .slide .content p{
+    color: var(--light-color);
+    font-size: 3rem;
+}
+
+.swiper-pagination-bullet-active{
+    background: var(--green);
+}
+
+.main .spham .slide .content h3{
+    
+    font-size: 5rem;
+}   
+
+.Mohinh{
+    text-align: center;
+    color: var(--green);
+    font-size: 5rem;
+    padding-top: 1rem;
+}
+
+.TChu .box-container{
+    display:grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(28rem,1fr));
+    gap: 15rem;
+}
+
+.TChu .box-container .box .btn{
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.1rem;
+    color: #fff;
+    background: var(--black);
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+}
+
+.TChu .box-container .box .btn:hover{
+    background: var(--green);
+    letter-spacing: .1rem;
+}
+
+
+.TChu .box-container .box h3{
+    color: var(--black);
+    font-size: 2rem;
+}
+
+.TChu .box-container .box .stars{
+    padding: 1rem 0;
+}
+
+.TChu .box-container .box .stars i{
+    font-size: 1.5rem;
+    color: var(--green);
+}
+
+.TChu .box-container .box span{
+    color: var(--green);
+    font-weight: bolder;
+    margin-right: 1rem;
+    font-size: 2rem;
+}
+
+.Mo{
+    text-align: center;
+    font-size: 30px;
+    color: var(--green);
+    background: fixed;
+    padding: 5rem 0;
+}
+.UyTin{
+    font-size: 20px;
+    color: #fa6e4f;
+    margin-right: auto;
+    padding: 1rem;
+}
+.phu{
+    font-size: 17px;
+    color: var(--black);
+    padding: .5rem;
+}
+
+   
+       
+
+.RECOM .DacBiet h1{
+    font-size: 30px;
+    color: var(--black);
+    padding: 1rem;
+}
+.RECOM li{
+    font-size: 17px;
+    text-transform: none;
+}
+
+.Tam{
+    font-size: 20px;
+    color: #fa6e4f;
+    margin-right: auto;
+    padding: .5rem;
+}
+
+
+.LHE .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(20rem, 1fr));
+    gap: 1.5rem;
+}
+.LHE .box-container .box h3{
+    padding: .5rem 0;
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.LHE .box-container .box p{
+    padding: .5rem 0;
+    font-size: 1.5rem;
+    text-transform: none;
+}
+
+.LHE .box-container .box a{
+    display: block;
+    padding: .5rem 0;
+    font-size: 1.5rem;
+    color: var(--light-color);
+    text-transform: none;
+}
+
+.LHE .box-container .box a:hover{
+    color: var(--green);
+    text-decoration: underline;
+}
+
+.LHE .credit{
+    text-align: center;
+    border-top: .1rem solid rgba(0,0,0,.1);
+    font-size: 1.2rem;
+    color: var(--black);
+    padding: .5rem;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    text-transform: none;
+}
+
+.LHE .credit span{
+    color: var(--green);
+}
+
+.loader{
+    position: fixed;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loader img{
+    width: 35rem;
+}
+
+.loader .fade-out{
+    top: 110%;
+    opacity: 0;
+}
+
+.LHE .box-container .wrapper .button .icon{
+    
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    text-align: center;
+    font-size: 1.7rem;
+    color: var(--black);
+    border-radius: 50% ;
+    background: #eee;
+}
+
+.LHE .box-container .wrapper .button :hover.icon{
+    
+    color: #4267b2;
+    background: #eee;
+    transform: rotate(360deg);
+}
+
+.user{
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 100%;
+    background: var(--green);
+    backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    border-radius: 40px;
+    pointer-events:all;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.user.active-popup{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.user .icon-close{
+    position: absolute;
+    top: 0; right: 0;
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 10px;    
+}
+
+.icon-close i{
+    font-size: 32px;
+    color: #333;
+}
+
+.user  .logreg-box{
+    width: 100%;
+    
+}
+.user .form-box-login{
+    display: block;
+}
+.user.active .form-box-login {
+    display: none;
+}
+
+.user .form-box-register{
+    display:none;
+}
+.user.active .form-box-register {
+    display: block;
+}
+
+.user .logreg-box .logreg-title{
+    
+    margin-bottom: 40px;
+    color: var(--black);
+}
+
+.logreg-title h2{
+    text-align: center;
+    font-size: 32px;
+}
+
+.user .logreg-box .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    padding-right: 25px;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -7px;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color:#eee;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.input-box .iconn{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 19px;
+}
+
+.logreg-box .remember-forgot{
+    font-size: 14.5px;
+    color: #fff;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input{
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.remember-forgot a{
+    color: #fff;
+    text-decoration: none;
+}
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.logreg-box .btnn{
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    cursor: pointer;
+    font-size: 16px;
+    color: #222;
+    font-weight: 600;
+}
+
+.logreg-box .logreg-link{
+    font-size: 14.5px;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 25px 0 15px;
+}
+
+.logreg-link p a{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.logreg-link p a:hover{
+    text-decoration: underline;
+}
+
+.media-options{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.media-options a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    border-radius: 40px;
+    color: #fff;
+    text-decoration: none;
+    transition: .5s;
+}
+.media-options a:hover{
+    background: rgb(255,255, 255 ,.1);
+}
+
+.media-options a i{
+    font-size: 22px;
+    margin: 0 8px 1.5px 0;
+}
+
+.media-options a span{
+    font-size: 16px;
+    font-weight: 500;
+}
